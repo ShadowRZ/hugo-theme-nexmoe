@@ -1,0 +1,8 @@
+{{ $taxonomy := "tags" }}
+<div class="nexmoe-post-meta nexmoe-rainbow">
+  {{ with .GetTerms $taxonomy }}
+    {{ range . }}
+      <a href="{{ .RelPermalink }}"><iconify-icon icon="ph:tag-duotone"></iconify-icon> {{ .LinkTitle }}</a>
+    {{ end }}
+  {{ end }}
+</div>

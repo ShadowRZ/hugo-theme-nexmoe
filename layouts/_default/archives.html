@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="nexmoe-archives">
+  {{ partial "functions/nexmoe/list-tags-with-count.html" . }}
+  {{ partial "functions/nexmoe/list-categories.html" . }}
+  {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ partial "functions/nexmoe/list-articles.html" $pages }}
+</section>
+{{ end }}

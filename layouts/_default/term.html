@@ -1,0 +1,13 @@
+{{- define "title-override" -}}
+{{- $prefix := "Taxonomy" -}}
+{{- if eq .Type "tags" -}}
+{{- $prefix = i18n "count.tags" -}}
+{{- else if eq .Type "categories" -}}
+{{- $prefix = i18n "count.categories" -}}
+{{- end -}}
+{{- printf "%s: %s - %s" $prefix .Title site.Title -}}
+{{- end -}}
+
+{{ define "main" }}
+{{ partial "functions/nexmoe/list-base.html" .Pages }}
+{{ end }}

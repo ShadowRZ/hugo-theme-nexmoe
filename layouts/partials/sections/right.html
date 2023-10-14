@@ -1,0 +1,15 @@
+<div class="nexmoe-fixed">
+  <div class="nexmoe-tool">
+    {{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
+    {{- $has_headers := ge (len $headers) 1 -}}
+    {{- if $has_headers -}}
+      {{ if or .Params.toc site.Params.function.globalToc }}
+      <button class="mdui-fab catalog" style="overflow:unset;">
+        <iconify-icon icon="ph:list-bullets-duotone" width="32px"></iconify-icon>
+        {{ .TableOfContents }}
+      </button>
+      {{- end -}}
+    {{- end -}}
+    <a href="#nexmoe-content" class="toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><iconify-icon icon="ph:arrow-up-duotone"></iconify-icon></button></a>
+  </div>
+</div>

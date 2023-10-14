@@ -1,0 +1,25 @@
+<div class="nexmoe-widget-wrap">
+  <div class="nexmoe-widget nexmoe-link">
+    <ul>
+      {{ range .options.widgetLink }}
+      <li>
+        <a href="{{ .link }}" target="_blank">
+          <img src="{{ .img }}" alt="{{ .title }}"></img>
+          <p>{{ .title }}</p>
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+<style>
+.nexmoe-widget-wrap .nexmoe-link ul li a {
+  text-align : center;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a img {
+  max-width : 100%;
+}
+.nexmoe-widget-wrap .nexmoe-link ul li a p {
+  margin: 10px 0;
+}
+</style>

@@ -1,0 +1,15 @@
+{{ if not .Params.hide_copyright }}
+<div class="nexmoe-post-copyright">
+  <strong>{{ i18n "copyright.author" }}: </strong>{{ $.Site.Author.name }}<br>
+  <strong>{{ i18n "copyright.permalink" }}: </strong>
+    <a href="{{ .Permalink }}" title="{{ .Permalink }}" target="_blank" rel="noopener">
+      {{ .Permalink }}
+    </a>
+  <br>
+  {{ with .Params.copyright }}
+    {{ . }}
+  {{ else }}
+    {{ with site.Copyright }}{{ . }}{{ end }}
+  {{ end }}
+</div>
+{{ end }}

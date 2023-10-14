@@ -1,0 +1,6 @@
+{{ $taxonomy := "categories" }}
+{{ with .GetTerms $taxonomy }}
+  {{ range . }}
+    <a href="{{ .RelPermalink }}"><iconify-icon icon="ph:archive-box-duotone"></iconify-icon> {{ .LinkTitle }}</a>
+  {{ end }}
+{{ end }}

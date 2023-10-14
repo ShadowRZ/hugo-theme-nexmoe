@@ -1,0 +1,7 @@
+<div class="tagcloud nexmoe-rainbow">
+  {{ range site.Taxonomies.tags }}
+    <a class="mdui-ripple -unordered list-link" href="{{ .Page.Permalink }}">
+      {{ .Page.Title }} <span class="mdui-ripple -unordered list-count">{{ .Count }}</span>
+    </a>
+  {{ end }}
+</div>

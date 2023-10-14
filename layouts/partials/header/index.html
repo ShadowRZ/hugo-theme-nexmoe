@@ -1,0 +1,26 @@
+<div class="nexmoe-drawer mdui-drawer" id="drawer">
+  <div class="nexmoe-avatar mdui-ripple">
+      <a href="{{ site.BaseURL }}" title="{{ or site.Author.name site.Title }}">
+          <img src="{{ site.Params.avatar }}" alt="{{ or site.Author.name site.Title }}">
+      </a>
+  </div>
+  <div class="nexmoe-count">
+      <div><span>{{ i18n "count.articles" }}</span>{{ site.RegularPages.Len }}</div>
+      <div><span>{{ i18n "count.tags" }}</span>{{ site.Taxonomies.tags | len }}</div>
+      <div><span>{{ i18n "count.categories" }}</span>{{ site.Taxonomies.categories | len }}</div>
+  </div>
+  {{ partial "functions/nexmoe/nexmoe-menu.html" (dict "menuID" "main" "page" .) }}
+  
+  {{ range site.Params.widgets }}
+  {{ if .enable }}
+  {{ partial (printf "widgets/%s.html" .name) (dict "page" . "options" .options) }}
+  {{ end }}
+  {{ end }}
+ 
+  <div class="nexmoe-copyright">
+      &copy; {{ now.Format "2006" }} {{ or site.Author.name site.Title }}
+      Powered By <a href="https://gohugo.io" target="_blank">Hugo</a>
+      & <a href="https://github.com/ShadowRZ/hugo-theme-nexmoe" target="_blank">Nexmoe</a>
+      {{ partial "customize/footer.html" . }}
+  </div>
+</div>

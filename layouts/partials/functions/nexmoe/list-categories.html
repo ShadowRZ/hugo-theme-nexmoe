@@ -1,0 +1,15 @@
+<div class="categories nexmoe-rainbow-fill">
+  {{- range site.Taxonomies.categories -}}
+    {{- $coverx := "" -}}
+    {{- range .Pages -}}
+      {{- if .Params.cover -}}
+        {{- $coverx := .Params.cover -}}
+        {{- break -}}
+      {{- end -}}
+    {{- end -}}
+    <a class="mdui-ripple" href="{{ .Page.Permalink }}">
+      <div class="bg" style="background-image:url({{ $coverx }})"></div>
+      <h1>{{ .Page.Title }}</h1>
+    </a>
+  {{- end -}}
+</div>

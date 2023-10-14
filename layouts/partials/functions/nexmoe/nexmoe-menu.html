@@ -1,0 +1,39 @@
+{{- /*
+Renders a menu for the given menu ID. (Without children)
+
+@context {page} page The current page.
+@context {string} menuID The menu ID.
+
+@example: {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+*/}}
+
+{{- $page := .page }}
+{{- $menuID := .menuID }}
+
+{{- with index site.Menus $menuID }}
+  <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+    {{- partial "inline/nexmoe-menu/walk.html" (dict "page" $page "menuEntries" .) }}
+  </div>
+{{- end }}
+
+{{- define "partials/inline/nexmoe-menu/walk.html" }}
+  {{- $page := .page }}
+  {{- range .menuEntries }}
+    {{- $attrs := dict "href" .URL }}
+    {{- if $page.IsMenuCurrent .Menu . }}
+      {{- $attrs = merge $attrs (dict "class" "nexmoe-list-item mdui-list-item mdui-ripple true" "aria-current" "page") }}
+    {{- else }}
+      {{- $attrs = merge $attrs (dict "class" "nexmoe-list-item mdui-list-item mdui-ripple false" "aria-current" "true") }}
+    {{- end }}
+    <a
+      {{- range $k, $v := $attrs }}
+        {{- with $v }}
+          {{- printf " %s=%q" $k $v | safeHTMLAttr }}
+        {{- end }}
+      {{- end -}}
+    >
+      <iconify-icon height="24px" class="mdui-list-item-icon" {{ printf "icon=%q" (or .Params.icon "ph:link-duotone") | safeHTMLAttr }}></iconify-icon>
+      <div class="mdui-list-item-content">{{ or (T .Identifier) .Name | safeHTML }}</div>
+    </a>
+  {{- end }}
+{{- end }}

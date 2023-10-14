@@ -1,0 +1,112 @@
+baseURL = "https://shadowrz.github.io/hugo-theme-nexmoe/"
+title = "Hugo Themes"
+copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+disableKinds = ["taxonomy"]
+
+[author]
+  name = "Steve Francia"
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    ordered = true
+
+[privacy]
+
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true
+
+# Theme paramters
+[params]
+# Avatar
+avatar = "/hugo-theme-nexmoe/assets/avatar.webp"
+
+[params.background]
+# 既是博客的背景，又是文章默认头图
+path = "/hugo-theme-nexmoe/assets/subtle-prism.svg"
+
+[params.function] # 功能开关，可选值（true,false）
+globalToc = true # 开启该功能会自动开启文章 TOC（文章目录） 功能
+wordCount = false # 是否开启文章字数统计 (true, false)
+copyCode = true # 是否允许复制代码块
+
+# Sidebar widgets
+## Search (UNSUPPORTED)
+# [[params.widgets]]
+# name = "search"
+# enable = true
+
+# [params.widgets.options.search]
+# type = "engine"
+# url = "https://cn.bing.com/search?q=site:nexmoe.com"
+# id = "<swiftype-id>"
+
+[[params.widgets]]
+name = "social"
+enable = true
+
+[params.widgets.options.social]
+GitHub = [
+  "https://github.com/ShadowRZ/hugo-theme-nexmoe",
+  "ph:github-logo",
+  "rgb(25, 23, 23)",
+  "rgba(25, 23, 23, .1)"
+]
+Docs = [
+  "https://shadowrz.gitlab.io/codex/hugo-theme-nexmoe/",
+  "ph:book-open-text",
+  "rgb(244, 143, 177)",
+  "rgba(244, 143, 177, .1)"
+]
+
+[[params.widgets]]
+name = "category"
+enable = true
+
+[[params.widgets]]
+name = "hitokoto"
+enable = false
+
+[params.widgets.options.widgetHitokoto]
+loading_placeholder = "🚀 获取中..."
+loading_error_placeholder = "🐞 获取失败..."
+# category = ""
+
+[[params.widgets]]
+name = "recent_posts"
+enable = true

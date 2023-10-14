@@ -1,0 +1,4 @@
+{{ define "main" }}
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ partial "functions/nexmoe/list-base.html" $pages }}
+{{ end }}

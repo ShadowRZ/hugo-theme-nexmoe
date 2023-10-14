@@ -1,0 +1,8 @@
+<div class="nexmoe-post-meta">
+  <div class="nexmoe-rainbow">
+      <a><iconify-icon icon="ph:calendar-blank-duotone"></iconify-icon> {{ .Date | time.Format "2006年01月02日" }}</a>
+      {{ partial "functions/nexmoe/post-categories.html" . }}
+      {{ partial "functions/nexmoe/reading-time.html" . }}
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+{{/* Builds a archive section. */}}
+<article>
+  {{- range .GroupByPublishDate "2006" -}}
+  {{- if ne .Key "0001" -}}
+  <h2>{{ .Key }}</h2>
+  <ul>
+    {{- range .Pages -}}
+      <li><span>{{ .PublishDate.Format "01-02" }}</span><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end -}}
+  </ul>
+  {{- end -}}
+  {{- end -}}
+</article>

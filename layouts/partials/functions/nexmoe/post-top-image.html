@@ -1,0 +1,13 @@
+<a href="{{ .RelPermalink }}">
+  {{ if .Params.cover }}
+    <div class="nexmoe-post-cover mdui-ripple absolute" style="padding-top: {{ mul (.Params.coverHeight .Params.coverWidth) 100 }};"> 
+      <img src="{{ .Params.cover }}" alt="{{ .Title }}" loading="lazy">
+      <h1>{{ .Title }}</h1>
+    </div>
+  {{ else }}
+    <div class="nexmoe-post-cover mdui-ripple"> 
+      <img src="{{ site.Params.background.path }}" alt="{{ .Title }}" loading="lazy">
+      <h1>{{ .Title }}</h1>
+    </div>
+  {{ end }}
+</a>

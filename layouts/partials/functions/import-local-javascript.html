@@ -1,0 +1,14 @@
+{{- $path := .path }}
+{{- $async := .async -}}
+{{- with resources.Get $path }}
+  {{- if eq hugo.Environment "development" }}
+    {{- with . | js.Build }}
+      <script src="{{ .RelPermalink }}"{{ if $async }} async{{ end }}></script>
+    {{- end }}
+  {{- else }}
+    {{- $opts := dict "minify" true }}
+    {{- with . | js.Build $opts | fingerprint }}
+      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"{{ if $async }} async{{ end }}></script>
+    {{- end }}
+  {{- end }}
+{{- end }}

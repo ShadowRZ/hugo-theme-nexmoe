@@ -1,0 +1,28 @@
+<div id="nexmoe-background">
+  <div
+    class="nexmoe-bg"
+    style="background-image: url({{ site.Params.background.path }})"
+  ></div>
+  <div class="mdui-appbar mdui-shadow-0">
+    <div class="mdui-toolbar">
+      <a
+        mdui-drawer="{target: '#drawer', swipe: true}"
+        title="menu"
+        class="mdui-btn mdui-btn-icon mdui-ripple --iconify-icon"
+      >
+        <iconify-icon icon="ph:cube-duotone" height="32px"></iconify-icon>
+      </a>
+      <div class="mdui-toolbar-spacer"></div>
+      <a
+        href="{{ site.BaseURL }}"
+        title="{{ or site.Author.name site.Title }}"
+        class="mdui-btn mdui-btn-icon"
+      >
+        <img
+          src="{{ site.Params.avatar }}"
+          alt="{{ or site.Author.name site.Title }}"
+        />
+      </a>
+    </div>
+  </div>
+</div>

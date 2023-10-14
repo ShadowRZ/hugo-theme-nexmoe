@@ -1,0 +1,20 @@
+<div class="nexmoe-widget-wrap">
+  <div class="nexmoe-widget nexmoe-social">
+    {{ range $name, $value := .options.social }}
+    {{ $href := index $value 0 }}
+    {{ $icon := index $value 1 }}
+    {{ $foreground := index $value 2 }}
+    {{ $background := index $value 3 }}
+    <a
+      class="mdui-ripple --iconify-icon"
+      href="{{ $href }}"
+      target="_blank"
+      mdui-tooltip="{content: '{{ $name }}'}"
+      style="color: {{ $foreground | safeCSS }}; background-color: {{ $background | safeCSS }};">
+      <span style="width: 24px; height: 24px;">
+        <iconify-icon height="24px" {{ printf "icon=%q" (or $icon "ph:link-duotone") | safeHTMLAttr }}></iconify-icon>
+      </span>
+    </a>
+    {{ end }}
+  </div>
+</div>

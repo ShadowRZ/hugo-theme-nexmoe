@@ -1,0 +1,21 @@
+name = 'Nexmoe'
+license = 'Apache-2.0'
+licenselink = 'https://github.com/ShadowRZ/hugo-theme-nexmoe/blob/main/LICENSE'
+description = 'Ported from Hexo theme Nexmoe, a special Hexo theme.'
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/ShadowRZ/hugo-theme-nexmoe'
+
+# If you have a running demo of the theme
+demosite = 'https://shadowrz.github.io/hugo-theme-nexmoe'
+
+# If the theme has a single author
+[author]
+  name = 'Yorusaka Miyabi'
+  homepage = 'https://shadowrz.github.io/blog/'
+
+# If porting an existing theme
+[original]
+  author = '折影轻梦'
+  homepage = 'https://nexmoe.com'
+  repo = 'https://github.com/theme-nexmoe/hexo-theme-nexmoe'

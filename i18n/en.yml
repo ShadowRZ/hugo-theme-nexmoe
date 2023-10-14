@@ -1,0 +1,31 @@
+continue:
+  other: View More...
+nav:
+  home:
+    other: Home
+search:
+  other: Search
+archive:
+  other: Archive
+recent_posts:
+  other: Recent Posts
+categories:
+  other: Categories
+hitokoto:
+  other: 一言
+tagcloud:
+  other: Tag Cloud
+social:
+  other: Social Button
+count:
+  articles:
+    other: Articles
+  tags:
+    other: Tags
+  categories:
+    other: Categories
+copyright:
+  author:
+    other: Author
+  permalink:
+    other: Link

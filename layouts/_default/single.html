@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <div class="nexmoe-post">
+    <article>
+      {{ partial "functions/nexmoe/post-top-image.html" . }}
+      {{ partial "functions/nexmoe/post-metadata.html" . }}
+      {{ .Content }}
+    </article>
+    {{ if not .Params.reprint }}
+    {{ partial "functions/nexmoe/post-copyright.html" . }}
+    {{ end }}
+    {{ partial "functions/nexmoe/post-tags.html" . }}
+    {{ if or .Params.comments true }}
+      <div class="nexmoe-post-footer">
+        {{ partial "customize/comment.html" . }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}

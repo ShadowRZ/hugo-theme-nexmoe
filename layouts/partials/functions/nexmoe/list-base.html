@@ -1,0 +1,10 @@
+{{/* Base style for list based templates. */}}
+{{ range . }}
+<section class="nexmoe-posts">
+  <div class="nexmoe-post">
+    {{ partial "functions/nexmoe/post-top-image.html" . }}
+    {{ partial "functions/nexmoe/post-metadata.html" . }}
+    <article>{{ .Summary }}</article>
+  </div>
+</section>
+{{ end }}
