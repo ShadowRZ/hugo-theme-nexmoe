@@ -1,3 +1,4 @@
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 <div class="nexmoe-drawer mdui-drawer" id="drawer">
   <div class="nexmoe-avatar mdui-ripple">
       <a href="{{ site.BaseURL }}" title="{{ or site.Author.name site.Title }}">
@@ -5,7 +6,7 @@
       </a>
   </div>
   <div class="nexmoe-count">
-      <div><span>{{ i18n "count.articles" }}</span>{{ site.RegularPages.Len }}</div>
+      <div><span>{{ i18n "count.articles" }}</span>{{ $pages.Len }}</div>
       <div><span>{{ i18n "count.tags" }}</span>{{ site.Taxonomies.tags | len }}</div>
       <div><span>{{ i18n "count.categories" }}</span>{{ site.Taxonomies.categories | len }}</div>
   </div>
