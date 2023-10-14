@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <div class="nexmoe-post">
+    <article class="nexmoe-py">
+      {{ .Content }}
+    </article>
+    {{ if or .Params.comments true }}
+      <div class="nexmoe-post-footer">
+        {{ partial "customize/comment.html" . }}
+      </div>
+    {{ end }}
+  </div>
+{{ end }}
